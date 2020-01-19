@@ -1,4 +1,4 @@
-name: Testing the Action
+name: Testing Action
 
 on: [pull_request]
 
@@ -12,7 +12,7 @@ jobs:
       - name: Report Ansible version
         run: ansible --version
 
-      - name: Testing the action
+      - name: Testing action
         uses: ./
         with:
           api_key: ${{ secrets.GALAXY_API_KEY }}

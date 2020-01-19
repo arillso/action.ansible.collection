@@ -11,6 +11,6 @@ jobs:
         run: ansible --version
 
       - name: Testing the action
-        uses: arillso/action.ansible.collection@HEAD
+        uses: ./
         with:
           api_key: ${{ secrets.GALAXY_API_KEY }}

@@ -13,6 +13,6 @@ jobs:
         run: ansible --version
 
       - name: Testing the action
-        uses: ./../
+        uses: ./
         with:
           api_key: ${{ secrets.GALAXY_API_KEY }}

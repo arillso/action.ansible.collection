@@ -7,10 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v1
+
       - name: Report Ansible version
         run: ansible --version
 
       - name: Testing the action
-        uses: ./../
+        uses: arillso/action.ansible.collection@HEAD
         with:
           api_key: ${{ secrets.GALAXY_API_KEY }}

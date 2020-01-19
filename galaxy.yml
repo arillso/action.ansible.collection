@@ -1,0 +1,14 @@
+---
+namespace: arillso
+name: test_do_not_use
+version: 0.0.1
+readme: README.md
+authors:
+  - Simon Baerlocher (@sbaerlocher) <s.baerlocher@sbaerlocher.ch>
+description: This is a test collection used for running tests on https://github.com/arillso/action.ansible.collection.
+license_file: LICENSE
+dependencies: {}
+tags: []
+repository: https://github.com/arillso/action.ansible.collection
+documentation: https://github.com/arillso/action.ansible.collection
+issues: https://github.com/arillso/action.ansible.collection/issues

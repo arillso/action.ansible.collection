@@ -1,0 +1,28 @@
+{
+  "name": "action.ansible.collection",
+  "version": "1.0.0",
+  "description": "Deploy a collection to Ansible Galaxy",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build src/index.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arillso/action.ansible.collection.git"
+  },
+  "author": "Simon Baerlocher <s.baerlocher@sbaerlocher.ch>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arillso/action.ansible.collection/issues"
+  },
+  "homepage": "https://github.com/arillso/action.ansible.collection#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.1",
+    "@actions/exec": "^1.0.3",
+    "js-yaml": "^3.13.1"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5"
+  }
+}

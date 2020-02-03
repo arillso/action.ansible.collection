@@ -1,7 +1,7 @@
 ---
 namespace: arillso
 name: test_do_not_use
-version: 0.0.3
+version: 0.0.4
 readme: README.md
 authors:
   - Simon Baerlocher (@sbaerlocher) <s.baerlocher@sbaerlocher.ch>

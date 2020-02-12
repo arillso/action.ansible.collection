@@ -30,7 +30,7 @@ async function run(): Promise<void> {
     core.debug(`Building collection ${namespace}-${name}-${version}`)
     buildCollection(namespace, name, version, apiKey)
       .then(() =>
-        core.debug(
+        core.info(
           `Successfully published ${namespace}-${name} v${version} to Ansible Galaxy.`
         )
       )

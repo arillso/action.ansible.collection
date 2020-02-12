@@ -7,7 +7,7 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-- Conversion from Javascript to Typescript.
+- Migrate from Javascript to Typescript.
 
 ## 1.0.0
 

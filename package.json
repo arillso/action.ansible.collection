@@ -1,6 +1,6 @@
 {
   "name": "action.ansible.collection",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Build and publish an Ansible Collection to Ansible Galaxy.",
   "main": "dist/index.js",
   "scripts": {

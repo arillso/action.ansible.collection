@@ -115,4 +115,8 @@ temp/
 # Ignore all local history of files
 .history
 
+# Ignore built ts files
+__tests__/runner/*
+lib/**/*
+
 # End of https://www.gitignore.io/api/node,visualstudiocode

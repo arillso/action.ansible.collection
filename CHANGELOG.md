@@ -14,6 +14,7 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 - Bump jest-circus from 24.9.0 to 25.1.0
 - Bump eslint-plugin-jest from 22.21.0 to 23.7.0
 - Bump @typescript-eslint/parser from 2.18.0 to 2.20.0
+- Bump @types/jest from 24.9.1 to 25.1.3
 
 ## 1.0.2
 

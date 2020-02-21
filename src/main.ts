@@ -5,15 +5,16 @@ import yaml from 'js-yaml'
 
 async function run(): Promise<void> {
   try {
-    const apiKey = core.getInput('api_key', {required: true})
-    const galaxyConfigFile = core.getInput('galaxy_config_file') || 'galaxy.yml'
+    const apiKey: string = core.getInput('api_key', {required: true})
+    const galaxyConfigFile: string =
+      core.getInput('galaxy_config_file') || 'galaxy.yml'
     const galaxyConfig = yaml.safeLoad(
       fs.readFileSync(galaxyConfigFile, 'utf8')
     )
 
-    const namespace = galaxyConfig.namespace
-    const name = galaxyConfig.name
-    const version = galaxyConfig.version
+    const namespace: string = galaxyConfig.namespace
+    const name: string = galaxyConfig.name
+    const version: string = galaxyConfig.version
 
     if (
       namespace === undefined ||

@@ -7,6 +7,7 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+- Bump @types/node from 12.12.26 to 13.7.4
 - Bump typescript from 3.7.5 to 3.8.2
 
 ## 1.0.2

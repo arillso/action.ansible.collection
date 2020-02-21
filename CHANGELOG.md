@@ -3,6 +3,12 @@
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
+## master
+
+### Changed
+
+- Bump typescript from 3.7.5 to 3.8.2
+
 ## 1.0.2
 
 ### Changed

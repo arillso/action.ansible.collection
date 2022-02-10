@@ -5,6 +5,10 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## master
 
+### Changed
+
+- Bump tmpl from 1.0.4 to 1.0.5
+
 ## 1.0.3
 
 ### Changed

@@ -1,6 +1,6 @@
 ---
-name: 'Publish Ansible Collection'
-description: 'Build and publish an Ansible Collection to Ansible Galaxy'
+name: "Publish Ansible Collection"
+description: "Build and publish an Ansible Collection to Ansible Galaxy"
 author: 'Simon Baerlocher <s.baerlocher@sbaerlocher.ch>"'
 inputs:
   api_key:
@@ -9,12 +9,29 @@ inputs:
 
       See https://help.github.com/en/github/automating-your-workflow-with-github-actions/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables.
     required: true
-  galaxy_config_file:
-    description: 'A collection must have a galaxy.yml file that contains the necessary information to build a collection artifact. Defaults to "galaxy.yml" in the project root.'
-    default: 'galaxy.yml'
+  collection_dir:
+    description: |
+      The directory in which the Ansible Collection is stored. This defaults to the project root.
+    required: false
+    default: "./"
+  build:
+    description: |
+      You can now choose to build a collection without publishing, and vice versa.
+      If you wish to disable building a collection, set this parameter to "false."
+    required: true
+    default: "true"
+  publish:
+    description: |
+      You can now choose to publish a collection without building (from a pre-built archive), and vice versa.
+      If you wish to disable publishing a collection, set this parameter to "false."
+    required: true
+    default: "true"
+  galaxy_version:
+    description: Dynamically inject a semver-compatible version into your galaxy.yml file.
+    required: false
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
 branding:
-  icon: 'box'
-  color: 'black'
+  icon: "box"
+  color: "black"

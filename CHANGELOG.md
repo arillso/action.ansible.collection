@@ -5,6 +5,12 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## master
 
+## 1.2.0
+
+### Changed
+
+- NPM dependency updates
+
 ## 1.0.3
 
 ### Changed

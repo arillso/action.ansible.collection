@@ -1,7 +1,7 @@
 ---
 name: "Publish Ansible Collection"
 description: "Build and publish an Ansible Collection to Ansible Galaxy"
-author: 'Simon Baerlocher <s.baerlocher@sbaerlocher.ch>"'
+author: "Simon Baerlocher <s.baerlocher@sbaerlocher.ch>"
 inputs:
   api_key:
     description: |
@@ -50,11 +50,10 @@ inputs:
 
       This parameter is deprecated as Ansible Galaxy requires the file to be named `galaxy.yml` and to exist in the root of your Collection. Use `collection_dir` to specify a non-root directory for your Collection.
     required: false
-    default: 'galaxy.yml'
+    default: "galaxy.yml"
 runs:
-  using: 'docker'
-  # Takes ~3 minutes to build the container so speed up consumer invocations by using pre-built image
-  image: docker://ghcr.io/arillso/action-ansible-collection:1.3.0
+  using: "docker"
+  image: Dockerfile
 branding:
-  icon: 'box'
-  color: 'purple'
+  icon: "box"
+  color: "purple"

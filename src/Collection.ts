@@ -1,9 +1,9 @@
-import {IsNotEmpty} from 'class-validator'
-import {ExecOptions} from '@actions/exec/lib/interfaces'
+import { IsNotEmpty } from 'class-validator';
+import { ExecOptions } from '@actions/exec/lib/interfaces';
 
-import {CollectionInput} from './types'
-import {IsSemver} from './decorators'
-import {GalaxyConfig} from './GalaxyConfig'
+import { CollectionInput } from './types';
+import { IsSemver } from './decorators';
+import { GalaxyConfig } from './GalaxyConfig';
 
 /**
  * An Ansible Galaxy Collection.
@@ -12,49 +12,49 @@ export class Collection {
   // Keep these parameters in this class, not passed through to the GalaxyConfig, to avoid tight class coupling.
   // Also, we can perform class-validator validations on the inputs this way.
   @IsNotEmpty()
-  namespace: string
+  namespace: string;
   @IsNotEmpty()
-  name: string
-  @IsSemver({message: '$value must be semver-compatible'})
+  name: string;
+  @IsSemver({ message: '$value must be semver-compatible' })
   @IsNotEmpty()
-  version: string
-  protected readonly customDir: string
+  version: string;
+  protected readonly customDir: string;
   @IsNotEmpty()
-  readonly apiKey: string
-  protected readonly config: GalaxyConfig
+  readonly apiKey: string;
+  protected readonly config: GalaxyConfig;
 
   /**
    * Validation of input is handled by decorators.
    */
-  constructor({config, apiKey, customDir, customVersion}: CollectionInput) {
-    this.config = config
+  constructor({ config, apiKey, customDir, customVersion }: CollectionInput) {
+    this.config = config;
 
-    this.namespace = config.namespace || ''
-    this.name = config.name || ''
-    this.version = this.applyCustomVersion(customVersion)
-    this.apiKey = apiKey
-    this.customDir = customDir
+    this.namespace = config.namespace || '';
+    this.name = config.name || '';
+    this.version = this.applyCustomVersion(customVersion);
+    this.apiKey = apiKey;
+    this.customDir = customDir;
   }
 
   toString() {
-    return `${this.namespace}-${this.name}-${this.version}`
+    return `${this.namespace}-${this.name}-${this.version}`;
   }
 
   get path() {
     if (this.customDir.length > 0) {
-      return this.customDir
+      return this.customDir;
     }
-    return ''
+    return '';
   }
 
   protected applyCustomVersion(customVersion: string | undefined): string {
-    let version = this.config.version
+    let version = this.config.version;
     if (customVersion !== '') {
-      version = customVersion
-      this.config.version = version
+      version = customVersion;
+      this.config.version = version;
     }
 
-    return version || ''
+    return version || '';
   }
 
   /**
@@ -64,15 +64,11 @@ export class Collection {
    */
   async build(
     which: (tool: string, check?: boolean | undefined) => Promise<string>,
-    exec: (
-      commandLine: string,
-      args?: string[],
-      options?: ExecOptions
-    ) => Promise<number>
+    exec: (commandLine: string, args?: string[], options?: ExecOptions) => Promise<number>,
   ): Promise<number> {
-    const galaxyCommandPath = await which('ansible-galaxy', true)
+    const galaxyCommandPath = await which('ansible-galaxy', true);
     // If a custom directory is passed in, use that. Otherwise, do not specify a custom location.
-    return exec(`${galaxyCommandPath} collection build ${this.path}`)
+    return exec(`${galaxyCommandPath} collection build ${this.path}`);
   }
 
   /**
@@ -82,16 +78,10 @@ export class Collection {
    */
   async publish(
     which: (tool: string, check?: boolean | undefined) => Promise<string>,
-    exec: (
-      commandLine: string,
-      args?: string[],
-      options?: ExecOptions
-    ) => Promise<number>
+    exec: (commandLine: string, args?: string[], options?: ExecOptions) => Promise<number>,
   ): Promise<number> {
-    const galaxyCommandPath = await which('ansible-galaxy', true)
+    const galaxyCommandPath = await which('ansible-galaxy', true);
     // If a custom directory is passed in, use that. Otherwise, do not specify a custom location.
-    return exec(
-      `${galaxyCommandPath} collection publish ${this}.tar.gz --api-key=${this.apiKey}`
-    )
+    return exec(`${galaxyCommandPath} collection publish ${this}.tar.gz --api-key=${this.apiKey}`);
   }
 }

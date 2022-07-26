@@ -5,6 +5,12 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## master
 
+## 1.3.0
+
+### Changed
+
+- Refactoring of the code base
+
 ## 1.2.0
 
 ### Changed

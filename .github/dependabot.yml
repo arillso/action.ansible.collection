@@ -25,3 +25,29 @@ updates:
       prefix: fix
       prefix-development: chore
       include: scope
+
+  - package-ecosystem: docker
+    directory: "/"
+    schedule:
+      interval: monthly
+    reviewers:
+      - sbaerlocher
+    assignees:
+      - sbaerlocher
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
+
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: monthly
+    reviewers:
+      - sbaerlocher
+    assignees:
+      - sbaerlocher
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope

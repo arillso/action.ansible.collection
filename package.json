@@ -37,7 +37,7 @@
     "semver": "^7.3.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.0",
+    "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.18.2",
     "@types/jest": "^27.4.0",
     "@types/js-yaml": "^4.0.2",

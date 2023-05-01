@@ -98,7 +98,7 @@ jobs:
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v4.0.1
+        uses: docker/metadata-action@v4.4.0
         with:
           images: |
             ghcr.io/arillso/action-ansible-collection-testartifact
